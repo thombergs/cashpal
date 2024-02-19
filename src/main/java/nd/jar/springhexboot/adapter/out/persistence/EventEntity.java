@@ -3,8 +3,6 @@ package nd.jar.springhexboot.adapter.out.persistence;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.UUID;
-
 @Entity
 @Table
 @Getter
@@ -13,6 +11,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class EventEntity {
     @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
