@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 
 public record EventDto(
+	String id,
 	String name,
 	String description,
 	String from

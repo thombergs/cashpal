@@ -3,16 +3,17 @@ package nd.jar.springhexboot.adapter.out.persistence;
 import lombok.RequiredArgsConstructor;
 import nd.jar.springhexboot.application.domain.model.Event;
 import nd.jar.springhexboot.application.port.out.GetEventsPort;
-import nd.jar.springhexboot.application.port.out.PushEventPort;
+import nd.jar.springhexboot.application.port.out.ExternalStorage;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @Service
-public class EventPersistenceAdapter implements GetEventsPort, PushEventPort {
+public class EventPersistenceAdapter implements GetEventsPort, ExternalStorage {
     private final EventRepository eventRepository;
     private final EventEntityMapper accountMapper;
     @Override
@@ -26,5 +27,10 @@ public class EventPersistenceAdapter implements GetEventsPort, PushEventPort {
     public boolean push(Event event) {
         eventRepository.save(accountMapper.toEntity(event));
         return true;
+    }
+
+    @Override
+    public Optional<Event> find(String id) {
+        return eventRepository.findById(id).map(accountMapper::toDomainModel);
     }
 }

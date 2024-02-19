@@ -11,8 +11,7 @@ import lombok.*;
 @RequiredArgsConstructor
 public class EventEntity {
     @Id
-    @GeneratedValue
-    private Long id;
+    private String id;
 
     private String name;
 
