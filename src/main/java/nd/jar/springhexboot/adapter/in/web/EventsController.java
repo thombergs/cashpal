@@ -20,15 +20,9 @@ import static java.util.stream.Collectors.toMap;
 @RestController("/events")
 @RequiredArgsConstructor
 public class EventsController {
-    private final GetEventsPort getAccountsPort;
     private final EventDtoMapper eventDtoMapper;
     private final FindEventsUseCase findEventsUseCase;
     private final PushEventUseCase pushEventUseCase;
-
-    @GetMapping
-    List<EventDto> find(Pageable pageable) {
-        return getAccountsPort.getAll(pageable).stream().map(eventDtoMapper::toDto).collect(Collectors.toList());
-    }
 
     @PostMapping
     ResponseEntity<Void> push(EventDto eventDto) {

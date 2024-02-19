@@ -20,7 +20,6 @@ public class RedisCacheService implements ExternalStorage, GetEventPort {
     private final ObjectMapper om;
     @Override
     public boolean push(Event event) {
-
         try {
             stringRedisTemplate.opsForValue().set(event.id(), om.writeValueAsString(event));
         } catch (JsonProcessingException e) {

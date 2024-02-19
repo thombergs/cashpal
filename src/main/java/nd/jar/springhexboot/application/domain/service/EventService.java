@@ -14,16 +14,16 @@ import static java.util.stream.Collectors.toMap;
 @Service
 @RequiredArgsConstructor
 public class EventService implements PushEventUseCase, FindEventsUseCase {
-    private final Map<String, ExternalStorage> subscribers;
+    private final Map<String, ExternalStorage> storages;
     @Override
     public boolean push(Event event) {
-        return subscribers.values().stream().map(sub -> sub.push(event))
+        return storages.values().stream().map(sub -> sub.push(event))
                 .anyMatch(result -> !result);
     }
 
     @Override
     public Map<String, Event> find(String eventId) {
-        return subscribers.entrySet().stream()
+        return storages.entrySet().stream()
                 .collect(toMap(Map.Entry::getKey, entry -> entry.getValue().find(eventId))).entrySet().stream()
                 .filter(entry -> entry.getValue().isPresent())
                 .collect(toMap(Map.Entry::getKey, entry -> entry.getValue().get()));
