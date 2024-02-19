@@ -20,6 +20,7 @@ dependencies {
 //    implementation "org.springframework.boot:spring-boot-starter-security"
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation "org.springframework.boot:spring-boot-starter-data-redis"
+    implementation 'org.springframework.kafka:spring-kafka'
 
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
 
@@ -36,6 +37,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.boot:spring-boot-testcontainers'
     testImplementation "org.testcontainers:mysql:1.19.0"
+    testImplementation "org.testcontainers:kafka:1.19.5"
     testImplementation "com.redis:testcontainers-redis:2.0.1"
 
 }

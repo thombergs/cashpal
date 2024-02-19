@@ -15,7 +15,7 @@ import java.util.Optional;
 @Service
 @Log4j2
 @RequiredArgsConstructor
-public class RedisCacheService implements ExternalStorage, GetEventPort {
+public class RedisCacheAdapter implements ExternalStorage, GetEventPort {
     private final StringRedisTemplate stringRedisTemplate;
     private final ObjectMapper om;
     @Override
