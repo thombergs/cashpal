@@ -4,7 +4,6 @@ Project shows, how to use hexagonal architecture in your spring boot application
 ![Hexagonal Architecture](img/hexagonal-architecture.png)
 
 
-
 ## Implemented integrations:
 * Mysql (Spring Data JPA)
 * Redis (Spring Data Redis)
@@ -19,8 +18,30 @@ Project shows, how to use hexagonal architecture in your spring boot application
 ## Getting Started
 `gradle testBootRun`
 
+## Project Structure
+```
+└──com/
+    └── yourcompany/
+        ├── adapter/                # Adapter logic
+        │   ├── in/                 # Incoming requests adapters
+        │   │   └── http/
+        │   └── out/                # Outgoing requests adapters
+        │       ├── cache/
+        │       ├── kafka/
+        │       └── persistense/
+        ├── application             # Core logic
+        │   ├── domain/
+        │   │   ├── model/
+        │   │   └── service/
+        │   └── port/               # Core logic API
+        │       ├── in/
+        │       └── out/
+        └── common/                 # Neither business logic nor adapters
+```
+
 ## See More
 
+* [Гексагональная Архитектура и Spring Boot](https://habr.com/ru/articles/795127/)
 * Forked and inspired by [hombergs/buckpal](https://github.com/thombergs/buckpal)
 * [YouTube: Рустам Ахметов — Архитектура приложения и ошибки проектирования](https://www.youtube.com/watch?v=X6QdWTE1HHw&t=2194s&ab_channel=JPoint%2CJoker%D0%B8JUGru)
 * [Hexagonal Architecture with Java and Spring](https://reflectoring.io/spring-hexagonal/)
