@@ -1,4 +1,4 @@
-package nd.jar.springhexboot.adapter.in.web;
+package nd.jar.springhexboot.adapter.in.http;
 
 import nd.jar.springhexboot.application.domain.model.Event;
 import org.mapstruct.Mapper;

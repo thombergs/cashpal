@@ -1,19 +1,15 @@
-package nd.jar.springhexboot.adapter.in.web;
+package nd.jar.springhexboot.adapter.in.http;
 
 import lombok.RequiredArgsConstructor;
 import nd.jar.springhexboot.application.port.in.FindEventsUseCase;
 import nd.jar.springhexboot.application.port.in.PushEventUseCase;
-import nd.jar.springhexboot.application.port.out.GetEventsPort;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toMap;
 
