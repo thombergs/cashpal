@@ -1,0 +1,7 @@
+include 'in.http'
+include 'out.cache'
+include 'out.kafka'
+include 'out.persistence'
+include 'application'
+include 'bootstrap'
+
