@@ -31,4 +31,8 @@ public class EventsController {
         return findEventsUseCase.find(id).entrySet()
                 .stream().collect(toMap(Map.Entry::getKey, entry -> eventDtoMapper.toDto(entry.getValue())));
     }
+    @GetMapping("/hello")
+    String hello() {
+        return "ok";
+    }
 }

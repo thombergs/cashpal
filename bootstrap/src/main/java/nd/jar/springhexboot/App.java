@@ -1,4 +1,4 @@
-package nd.jar.springhexboot.application;
+package nd.jar.springhexboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
