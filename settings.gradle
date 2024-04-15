@@ -1,5 +1,5 @@
 include 'in.http'
-include 'out.cache'
+include 'out.redis'
 include 'out.kafka'
 include 'out.persistence'
 include 'application'

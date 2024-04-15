@@ -5,4 +5,6 @@ module spring.boot.hexagonal.bootstrap {
     requires spring.boot.hexagonal.out.persistence;
     requires spring.boot.autoconfigure;
     requires spring.boot;
+    requires spring.boot.hexagonal.out.redis;
+    requires spring.boot.hexagonal.out.kafka;
 }

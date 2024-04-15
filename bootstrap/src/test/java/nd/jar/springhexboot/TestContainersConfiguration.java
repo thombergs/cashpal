@@ -17,7 +17,7 @@ public class TestContainersConfiguration {
     MySQLContainer<?> mySQLContainer() {
         return new MySQLContainer<>("mysql:5.7.39");
     }
-/*
+
     @Bean
     @RestartScope
     @ServiceConnection(name = "redis")
@@ -30,7 +30,6 @@ public class TestContainersConfiguration {
     @ServiceConnection
     KafkaContainer kafka() {
         return new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:6.2.1"));
-    }*/
-
+    }
 
 }

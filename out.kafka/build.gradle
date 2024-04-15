@@ -17,6 +17,7 @@ bootJar {
 dependencies {
     implementation project(":application")
     implementation 'org.springframework.kafka:spring-kafka'
+    implementation 'org.apache.kafka:kafka-clients'
 
     implementation 'org.apache.logging.log4j:log4j-api'
 

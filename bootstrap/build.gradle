@@ -15,6 +15,8 @@ dependencies {
     implementation project(":application")
     implementation project(":out.persistence")
     implementation project(":in.http")
+    implementation project(":out.redis")
+    implementation project(":out.kafka")
     implementation "org.springframework.boot:spring-boot-autoconfigure"
     implementation 'mysql:mysql-connector-java:8.0.33'
 
