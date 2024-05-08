@@ -2,3 +2,19 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+    show-sql: true
+logging:
+  level:
+    org.springframework.web.reactive.function.client.ExchangeFunctions: debug
+    org:
+      hibernate:
+        internal:
+          SessionImpl: DEBUG
+        SQL: INFO
+        type: TRACE
+        loader:
+          hql: TRACE
+        engine:
+          transaction:
+            internal:
+              TransactionImpl: DEBUG

@@ -5,4 +5,6 @@ module spring.boot.hexagonal.out.persistence {
     requires org.mapstruct;
     requires spring.data.jpa;
     requires spring.context;
+
+    opens nd.jar.springhexboot.adapter.out.persistence to spring.core;
 }

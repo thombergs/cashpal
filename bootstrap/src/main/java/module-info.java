@@ -7,4 +7,6 @@ module spring.boot.hexagonal.bootstrap {
     requires spring.boot;
     requires spring.boot.hexagonal.out.redis;
     requires spring.boot.hexagonal.out.kafka;
+
+    opens nd.jar.springhexboot to spring.core;
 }

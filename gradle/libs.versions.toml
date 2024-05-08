@@ -1,0 +1,7 @@
+[versions]
+springBoot = "3.2.5"
+
+[libraries]
+
+
+[plugins]

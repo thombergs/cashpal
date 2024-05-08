@@ -1,14 +1,10 @@
 plugins {
-    id 'org.springframework.boot' version '3.2.4'
-    id 'io.spring.dependency-management' version '1.1.4'
-    id 'java'
+    id 'hexagonal.java-conventions'
+    id 'org.springframework.boot' version '3.2.5'
+    id 'application'
 }
-
-group = 'nd.jar.springhexboot'
-version = '0.0.1-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+application {
+    mainClass = 'nd.jar.springhexboot.App'
 }
 
 dependencies {
@@ -17,7 +13,7 @@ dependencies {
     implementation project(":in.http")
     implementation project(":out.redis")
     implementation project(":out.kafka")
-    implementation "org.springframework.boot:spring-boot-autoconfigure"
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
     implementation 'mysql:mysql-connector-java:8.0.33'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -26,8 +22,4 @@ dependencies {
     testImplementation "org.testcontainers:mysql:1.19.0"
     testImplementation "org.testcontainers:kafka:1.19.5"
     testImplementation "com.redis:testcontainers-redis:2.0.1"
-}
-
-test {
-    useJUnitPlatform()
 }

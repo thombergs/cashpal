@@ -6,4 +6,6 @@ module spring.boot.hexagonal.out.redis {
     requires spring.boot.hexagonal.application;
     requires org.apache.logging.log4j;
 
+    opens nd.jar.springhexboot.adapter.out.redis to spring.core, spring.beans;
+
 }
