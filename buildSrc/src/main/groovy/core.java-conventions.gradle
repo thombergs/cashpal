@@ -11,21 +11,21 @@ repositories {
 
 dependencies {
 
-    implementation enforcedPlatform('org.springframework.boot:spring-boot-dependencies:3.2.5')
-    annotationProcessor enforcedPlatform('org.springframework.boot:spring-boot-dependencies:3.2.5')
-    testAnnotationProcessor enforcedPlatform('org.springframework.boot:spring-boot-dependencies:3.2.5')
+    implementation platform(libs.spring.boot.dependencies)
+    annotationProcessor enforcedPlatform(libs.spring.boot.dependencies)
+    testAnnotationProcessor enforcedPlatform(libs.spring.boot.dependencies)
 
-    implementation 'org.springframework:spring-context'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+    implementation libs.spring.context
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
 
 
-    implementation 'org.apache.logging.log4j:log4j-api'
+    implementation libs.log4j
 
     testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
-    testCompileOnly 'org.projectlombok:lombok'
-    testAnnotationProcessor 'org.projectlombok:lombok'
+    testImplementation libs.junit
+    testCompileOnly libs.lombok
+    testAnnotationProcessor libs.lombok
 }
 
 test {

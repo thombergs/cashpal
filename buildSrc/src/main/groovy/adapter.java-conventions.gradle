@@ -5,8 +5,8 @@ plugins {
 dependencies {
     implementation project(":application")
 
-    implementation 'com.fasterxml.jackson.core:jackson-databind'
-    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
-    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+    implementation libs.jackson
+    implementation libs.mapstruct.core
+    annotationProcessor libs.mapstruct.processor
 
 }

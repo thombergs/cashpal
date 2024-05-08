@@ -3,6 +3,6 @@ plugins {
 }
 
 dependencies {
-    implementation 'org.springframework.kafka:spring-kafka'
-    implementation 'org.apache.kafka:kafka-clients'
+    implementation libs.spring.kafka
+    implementation libs.apache.kafka
 }

@@ -3,5 +3,6 @@ plugins {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation libs.spring.boot.starter.jpa
+    implementation libs.connector.mysql
 }
