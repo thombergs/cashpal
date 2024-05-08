@@ -1,0 +1,25 @@
+plugins {
+    id 'core.java-conventions'
+    id 'org.springframework.boot' version '3.2.5'
+    id 'application'
+}
+application {
+    mainClass = 'nd.jar.springhexboot.App'
+}
+
+dependencies {
+    implementation project(":application")
+    implementation project(":out.persistence")
+    implementation project(":in.http")
+    implementation project(":out.redis")
+    implementation project(":out.kafka")
+
+    implementation 'org.springframework.boot:spring-boot-autoconfigure'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+    testImplementation "org.springframework.boot:spring-boot-devtools"
+    testImplementation "org.testcontainers:mysql:1.19.0"
+    testImplementation "org.testcontainers:kafka:1.19.5"
+    testImplementation "com.redis:testcontainers-redis:2.0.1"
+}

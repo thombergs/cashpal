@@ -1,0 +1,29 @@
+[versions]
+spring-boot = "3.2.5"
+mapstruct = '1.5.5.Final'
+mysql = '8.0.33'
+openapi = '2.1.0'
+
+[libraries]
+spring-boot-dependencies = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+spring-context = { module = "org.springframework:spring-context" }
+spring-boot-starter-redis = { module = "org.springframework.boot:spring-boot-starter-data-redis" }
+spring-boot-starter-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web"}
+spring-kafka = {module = 'org.springframework.kafka:spring-kafka'}
+
+lombok = { module = "org.projectlombok:lombok" }
+log4j = { module = 'org.apache.logging.log4j:log4j-api'}
+
+junit = { module = 'org.junit.jupiter:junit-jupiter'}
+
+jackson = { module = "com.fasterxml.jackson.core:jackson-databind" }
+mapstruct-core = { module = 'org.mapstruct:mapstruct', version.ref = "mapstruct"}
+mapstruct-processor = { module = 'org.mapstruct:mapstruct-processor', version.ref = "mapstruct"}
+
+apache-kafka = { module = 'org.apache.kafka:kafka-clients'}
+connector-mysql = { module = 'mysql:mysql-connector-java', version.ref="mysql"}
+swagger = { module = 'org.springdoc:springdoc-openapi-starter-webmvc-ui', version.ref='openapi' }
+
+[plugins]
+#adapter = { id = 'adapter.java-conventions'}

@@ -1,0 +1,8 @@
+rootProject.name = 'spring-boot-hexagonal'
+include 'in.http'
+include 'out.redis'
+include 'out.kafka'
+include 'out.persistence'
+include 'application'
+include 'bootstrap'
+

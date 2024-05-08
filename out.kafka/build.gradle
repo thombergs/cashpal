@@ -1,0 +1,8 @@
+plugins {
+    id 'adapter.java-conventions'
+}
+
+dependencies {
+    implementation libs.spring.kafka
+    implementation libs.apache.kafka
+}

@@ -1,0 +1,7 @@
+plugins {
+    id 'adapter.java-conventions'
+}
+
+dependencies {
+    implementation libs.spring.boot.starter.redis
+}

@@ -1,0 +1,33 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'nd.jar.springhexboot'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation platform(libs.spring.boot.dependencies)
+    annotationProcessor enforcedPlatform(libs.spring.boot.dependencies)
+    testAnnotationProcessor enforcedPlatform(libs.spring.boot.dependencies)
+
+    implementation libs.spring.context
+    compileOnly libs.lombok
+    annotationProcessor libs.lombok
+
+
+    implementation libs.log4j
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation libs.junit
+    testCompileOnly libs.lombok
+    testAnnotationProcessor libs.lombok
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,12 @@
+plugins {
+    id 'core.java-conventions'
+}
+
+dependencies {
+    implementation project(":application")
+
+    implementation libs.jackson
+    implementation libs.mapstruct.core
+    annotationProcessor libs.mapstruct.processor
+
+}
