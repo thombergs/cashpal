@@ -1,8 +1,7 @@
 plugins {
-    id 'hexagonal.java-conventions'
+    id 'adapter.java-conventions'
 }
 
 dependencies {
-    implementation project(":application")
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 }

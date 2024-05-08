@@ -1,5 +1,5 @@
 plugins {
-    id 'hexagonal.java-conventions'
+    id 'core.java-conventions'
     id 'org.springframework.boot' version '3.2.5'
     id 'application'
 }
@@ -13,6 +13,7 @@ dependencies {
     implementation project(":in.http")
     implementation project(":out.redis")
     implementation project(":out.kafka")
+
     implementation 'org.springframework.boot:spring-boot-autoconfigure'
     implementation 'mysql:mysql-connector-java:8.0.33'
 

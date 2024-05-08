@@ -1,12 +1,8 @@
 plugins {
-    id 'hexagonal.java-conventions'
+    id 'adapter.java-conventions'
 }
 
 dependencies {
-    implementation project(":application")
     implementation 'org.springframework.kafka:spring-kafka'
     implementation 'org.apache.kafka:kafka-clients'
-
-    implementation 'com.fasterxml.jackson.core:jackson-databind'
-
 }

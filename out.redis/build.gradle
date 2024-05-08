@@ -1,10 +1,7 @@
 plugins {
-    id 'hexagonal.java-conventions'
+    id 'adapter.java-conventions'
 }
 
 dependencies {
-    implementation project(":application")
     implementation "org.springframework.boot:spring-boot-starter-data-redis"
-
-    implementation 'com.fasterxml.jackson.core:jackson-databind'
 }

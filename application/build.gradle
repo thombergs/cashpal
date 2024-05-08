@@ -1,6 +1,3 @@
 plugins {
-    id 'hexagonal.java-conventions'
-}
-dependencies {
-    implementation 'org.springframework:spring-context'
+    id 'core.java-conventions'
 }
