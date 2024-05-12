@@ -68,6 +68,12 @@ subprojects {
         useJUnitPlatform()
     }
 
+    configure(allprojects.findAll { it.name != 'common' }) {
+        dependencies {
+            implementation project(':common')
+        }
+    }
+
 //    // for kotlin
 //    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
 //        kotlinOptions {

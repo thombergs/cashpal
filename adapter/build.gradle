@@ -7,7 +7,6 @@ jar {
 }
 
 dependencies {
-    implementation project(':common')
     implementation project(':domain-model')
     implementation project(':port')
 }
