@@ -1,0 +1,17 @@
+bootJar {
+    enabled = true
+}
+
+jar {
+    enabled = true
+}
+
+dependencies {
+    implementation project(':domain-model')
+    implementation project(':domain-service')
+
+    // for integration tests
+    testImplementation project(':adapter')
+    testImplementation project(':port')
+    testImplementation project(':common')
+}

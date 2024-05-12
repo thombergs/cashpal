@@ -1,44 +1,86 @@
 plugins {
     id 'org.springframework.boot' version '3.1.0'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+
+    // for kotlin
+//    id 'org.jetbrains.kotlin.jvm' version '1.7.22'
+//    id 'org.jetbrains.kotlin.plugin.spring' version '1.7.22'
+//    id "org.jetbrains.kotlin.plugin.jpa" version '1.7.22'
 }
-
-
-group = 'io.reflectoring.buckpal'
-version = '0.0.1-SNAPSHOT'
-
-apply plugin: 'java'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: 'java-library'
 
 repositories {
     mavenCentral()
 }
 
-compileJava {
-    sourceCompatibility = 17
-    targetCompatibility = 17
+//ext {
+//    queryDslVersion = "5.0.0"
+//    testContainerVersion = "1.17.2"
+//}
+
+subprojects {
+    apply {
+        plugin 'org.springframework.boot'
+        plugin 'io.spring.dependency-management'
+        plugin 'java'
+
+//        plugin 'org.jetbrains.kotlin.jvm'
+//        plugin 'org.jetbrains.kotlin.plugin.spring'
+//        plugin 'org.jetbrains.kotlin.plugin.jpa'
+    }
+
+    group = 'io.reflectoring.buckpal'
+    version = '0.0.1-SNAPSHOT'
+
+    compileJava {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+
+        implementation('org.springframework.boot:spring-boot-starter-web')
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
+        testImplementation 'org.mockito:mockito-junit-jupiter:5.3.1'
+        testImplementation 'com.tngtech.archunit:archunit:1.0.1'
+        testImplementation 'com.h2database:h2'
+
+        runtimeOnly 'com.h2database:h2'
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
+
+//    // for kotlin
+//    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
+//        kotlinOptions {
+//            jvmTarget = JavaVersion.VERSION_17
+//            freeCompilerArgs = ["-Xjsr305=strict"]
+//        }
+//    }
+//
+//    // for kotlin
+//    allOpen {
+//        annotation("javax.persistence.Entity")
+//        annotation("javax.persistence.MappedSuperclass")
+//        annotation("javax.persistence.Embeddable")
+//    }
+
 }
-
-dependencies {
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-
-    implementation ('org.springframework.boot:spring-boot-starter-web')
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
-    testImplementation 'org.mockito:mockito-junit-jupiter:5.3.1'
-    testImplementation 'com.tngtech.archunit:archunit:1.0.1'
-    testImplementation 'com.h2database:h2'
-
-    runtimeOnly 'com.h2database:h2'
-
-}
-
-test {
-    useJUnitPlatform()
-}
-

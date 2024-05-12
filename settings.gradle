@@ -1,0 +1,9 @@
+rootProject.name = 'buckpal'
+
+include 'application'
+include 'adapter'
+include 'common'
+include 'domain-model'
+include 'domain-service'
+include 'port'
+
