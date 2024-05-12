@@ -7,6 +7,7 @@ jar {
 }
 
 dependencies {
+    implementation project(':adapter')
     implementation project(':domain-model')
     implementation project(':domain-service')
 
